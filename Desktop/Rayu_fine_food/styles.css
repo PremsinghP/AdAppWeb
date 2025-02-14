@@ -1,0 +1,418 @@
+/* Reset margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: whitesmoke; /* Light background for the entire page */
+  color: #333; /* Default text color */
+}
+
+/* Header */
+.header {
+  padding: 20px;
+  background-size: cover; /* Ensure the background image covers the header */
+  background-position: center; /* Center the background image */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Light shadow for a professional look */
+}
+
+.logo {
+  width: 300px;
+  height: 120px;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('assets/hero.jpg'); /* Replace with your actual image */
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Adjust height as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7); /* Initial glow effect */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Text Gradient Effect */
+.hero h1 {
+    font-size: 40px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #00ff00, #00ffff, #0000ff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 5s infinite linear;
+    transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.hero p {
+    font-size: 20px;
+    font-weight: 500;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #00ff00, #00ffff, #0000ff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 5s infinite linear;
+    transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Hover Effect - Floating & Glow */
+.hero h1:hover,
+.hero p:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 
+                 0 0 20px rgba(255, 215, 0, 0.8), 
+                 0 0 30px rgba(255, 165, 0, 0.7), 
+                 0 0 40px rgba(0, 255, 255, 0.7); /* Multicolor glow effect */
+    transform: translateY(-5px); /* Slight floating effect */
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Navbar */
+.navbar {
+    background-color: black;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.navbar-nav .nav-link {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    position: relative;
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff6600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Separator Style */
+.separator {
+    color: black; /* Adjust color */
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 15px;
+    user-select: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Remove separator after the last nav item */
+.navbar-nav .nav-item:last-child + .separator {
+    display: none;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000; /* Black line */
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+.navbar-nav .nav-link:hover::after {
+  opacity: 1; /* Show the black line when hovered */
+}
+
+.navbar-nav .nav-item:last-child .nav-link::after {
+  content: '';
+}
+
+/* Section Layout */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Centered content in block sections */
+  margin-bottom: 30px;
+  padding: 30px;
+  background-color: #fff; /* White background for clarity */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Light shadow to separate sections */
+  border-radius: 8px; /* Rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.section:hover {
+  transform: translateY(-5px); /* Slight elevation effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+}
+
+.section img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 8px; /* Rounded corners for images */
+}
+
+.section .section-content {
+  padding: 20px;
+  flex: 1;
+  text-align: center;
+}
+
+/* Section Content with Text and Image Layout */
+.section-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px; /* Space between text and image */
+  flex-wrap: wrap;
+}
+
+.section-content div {
+  max-width: 500px;
+  width: 100%; /* Ensure it takes full width on smaller screens */
+  text-align: left; /* Left-aligned text for professional look */
+}
+
+.section-content img {
+  max-width: 50%;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.image-left {
+  flex-direction: row; /* Image on the left, text on the right */
+}
+
+.image-right {
+  flex-direction: row-reverse; /* Text on the left, image on the right */
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #ff6600;
+  border-color: #ff6600;
+  padding: 12px 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #e65c00;
+  border-color: #e65c00;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px); /* Slight upward movement for button */
+}
+
+/* Home Section */
+.home-section {
+  position: relative;
+  background-image: url('assets/images/home-image.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.home-section .home-content {
+  position: absolute;
+  color: #fff;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+.home-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.home-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.home-section .btn-primary {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+.home-section .btn-primary:hover {
+  background-color: #e65c00;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Styling for the social media buttons */
+.social-icon i {
+    font-size: 24px;
+    color: #333;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon:hover i {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+
+/* Mobile Devices (Phones) */
+@media (max-width: 767px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    margin-bottom: 20px;
+    width: 200px; /* Reduce logo size for small screens */
+    height: auto;
+  }
+
+  .section-content .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-content .col-md-6 {
+    margin-bottom: 20px;
+  }
+
+  .home-section h1 {
+    font-size: 2rem; /* Adjust heading size */
+  }
+
+  .home-section p {
+    font-size: 1rem; /* Adjust paragraph size */
+  }
+
+  .home-section .btn-primary {
+    font-size: 1rem; /* Adjust button size */
+    padding: 8px 16px;
+  }
+}
+
+/* Tablet Devices */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .logo {
+    width: 300px; /* Medium-sized logo for tablets */
+    height: auto;
+  }
+
+  .home-section h1 {
+    font-size: 2.2rem; /* Adjust heading size */
+  }
+
+  .home-section p {
+    font-size: 1.1rem; /* Adjust paragraph size */
+  }
+
+  .home-section .btn-primary {
+    font-size: 1.1rem; /* Adjust button size */
+    padding: 10px 20px;
+  }
+}
+
+/* Laptop Devices */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .logo {
+    width: 100px; /* Larger logo for laptops */
+    height: auto;
+  }
+
+  .home-section h1 {
+    font-size: 2.5rem; /* Adjust heading size */
+  }
+
+  .home-section p {
+    font-size: 1.2rem; /* Adjust paragraph size */
+  }
+
+  .home-section .btn-primary {
+    font-size: 1.2rem; /* Adjust button size */
+    padding: 12px 24px;
+  }
+}
+
+/* Desktop Devices */
+@media (min-width: 1441px) {
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .logo {
+    width: 500px; /* Large logo for desktops */
+    height: auto;
+  }
+
+  .home-section h1 {
+    font-size: 3rem; /* Larger heading size */
+  }
+
+  .home-section p {
+    font-size: 1.5rem; /* Larger paragraph size */
+  }
+
+  .home-section .btn-primary {
+    font-size: 1.4rem; /* Larger button size */
+    padding: 14px 28px;
+  }
+}
+    
