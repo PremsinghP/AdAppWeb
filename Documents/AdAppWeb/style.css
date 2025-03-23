@@ -1,0 +1,32 @@
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.container {
+    max-width: 800px;
+}
+
+.card {
+    margin: 10px;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.edit-btn {
+    background-color: #ffcc00;
+}
+
+.delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+}
